@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="Pidev-EJB">
+		<jta-data-source>java:/pidev</jta-data-source>
+		<class>com.pidev.persistence.User</class>
+		<class>com.pidev.persistence.Freelancer</class>
+		<class>com.pidev.persistence.Job_owner</class>
+		<class>com.pidev.persistence.Job</class>
+		<class>com.pidev.persistence.Bank</class>
+		<class>com.pidev.persistence.Claim</class>
+		<class>com.pidev.persistence.Payment</class>
+		<class>com.pidev.persistence.Sous_Categories</class>
+		<class>com.pidev.persistence.Categories</class>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+		</properties>
+	</persistence-unit>
+</persistence>
