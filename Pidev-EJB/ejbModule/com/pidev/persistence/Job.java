@@ -1,8 +1,10 @@
 package com.pidev.persistence;
 
 import java.io.Serializable;
+
 import java.lang.String;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -27,6 +29,7 @@ public class Job implements Serializable {
 	private Categories categ;
 	private int userid;
 	private static final long serialVersionUID = 1L;
+	private List<Apply> applies;
 
 	public Job() {
 		super();
@@ -144,6 +147,16 @@ public class Job implements Serializable {
 				+ ", estimate_duration=" + estimate_duration + ", state="
 				+ state + ", cost=" + cost + ", categ=" + categ + ", userid="
 				+ userid + "]";
+	}
+
+	@OneToMany (mappedBy ="job")
+	public List<Apply> getApplies() {
+		return applies;
+	}
+
+
+	public void setApplies(List<Apply> applies) {
+		this.applies = applies;
 	}
 
 
