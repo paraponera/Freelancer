@@ -2,6 +2,8 @@ package com.pidev.persistence;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,7 @@ public class Freelancer extends User implements Serializable {
 	private String about;
 	private String friend_list;
 	private static final long serialVersionUID = 1L;
+	private List<Apply> applies;
 
 	public Freelancer() {
 		super();
@@ -76,6 +79,16 @@ public class Freelancer extends User implements Serializable {
 	public String toString() {
 		return super.toString()+ "Freelancer [Skills=" + Skills + ", cv=" + cv + ", about="
 				+ about + "]";
+	}
+	
+	@OneToMany (mappedBy ="freelancer")
+	public List<Apply> getApplies() {
+		return applies;
+	}
+
+
+	public void setApplies(List<Apply> applies) {
+		this.applies = applies;
 	}
 	
    
