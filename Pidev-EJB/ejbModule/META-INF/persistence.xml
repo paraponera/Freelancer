@@ -11,8 +11,6 @@
 		<class>com.pidev.persistence.Payment</class>
 		<class>com.pidev.persistence.Sous_Categories</class>
 		<class>com.pidev.persistence.Categories</class>
-		<class>com.pidev.persistence.Apply</class>
-		<class>com.pidev.persistence.ApplyPK</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 		</properties>

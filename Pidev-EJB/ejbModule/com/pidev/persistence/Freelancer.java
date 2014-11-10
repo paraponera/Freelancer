@@ -20,7 +20,7 @@ public class Freelancer extends User implements Serializable {
 	private String about;
 	private String friend_list;
 	private static final long serialVersionUID = 1L;
-	private List<Apply> applies;
+	
 
 	public Freelancer() {
 		super();
@@ -81,15 +81,7 @@ public class Freelancer extends User implements Serializable {
 				+ about + "]";
 	}
 	
-	@OneToMany (mappedBy ="freelancer")
-	public List<Apply> getApplies() {
-		return applies;
-	}
-
-
-	public void setApplies(List<Apply> applies) {
-		this.applies = applies;
-	}
+	
 	
    
 }
