@@ -1,0 +1,80 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:define name="title">List of jobs</ui:define>
+	<ui:define name="content">
+		<p:panel>
+			<h:form>
+             <p:growl id="growl" showDetail="true" sticky="false"  />  
+				<p:dataTable value="#{jobBean.jobs}" var="job" rows="5"
+					rowkey="#{job.id}" paginator="true" widgetVar="jobsTable"
+					paginatorPosition="bottom">
+					<f:facet name="header">
+						<h:outputText value="All Jobs" />
+						<p:inputText id="globalFilter" onkeyup="PF('jobsTable').filter()"  
+							style="width:150px" placeholder="Enter keyword"  />
+							 
+					</f:facet>
+					<p:column sortBy="#{job.title}">
+						<f:facet name="header">Title</f:facet>
+
+						<h:outputText value="#{job.title}" />
+
+					</p:column>
+					<p:column sortBy="#{job.description}">
+						<f:facet name="header"> Description </f:facet>
+
+						<h:outputText value="#{job.description}" />
+
+					</p:column>
+
+					<p:column filterBy="#{job.state}" sortBy="#{job.state}"
+					headerText="Type" filterOptions="#{jobBean.filterOptions}">
+						<f:facet name="header">
+							<h:outputText value="State" />
+						</f:facet>
+						<h:outputText value="#{job.state}" />
+					</p:column>
+					
+					<p:column filterBy="#{job.cost}" sortBy="#{job.cost}">
+						<f:facet name="header">Cost</f:facet>
+						<h:outputText value="#{job.cost}" />
+					</p:column>
+					
+					<p:column filterBy="#{job.userid}" sortBy="#{job.userid}">
+						<f:facet name="header">Fund of user</f:facet>
+						<h:outputText value="#{job.userid}" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">Accept</f:facet>
+						<p:commandLink action="#{jobBean.UpdateJob()}" actionListener="#{growlView.AcceptMessage()}"   update="growl" ajax="false">
+							<p:graphicImage value="/resources/images/accept.png" />
+							<f:setPropertyActionListener target="#{jobBean.job}"
+								value="#{job}"></f:setPropertyActionListener>
+
+						</p:commandLink>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Refuse</f:facet>
+						<p:commandLink action="#{jobBean.DeleteJob()}" ajax="false"  actionListener="#{growlView.RefuseMessage()}"   update="growl">
+							<p:graphicImage value="/resources/images/deny.png" />
+							<f:setPropertyActionListener target="#{jobBean.job}"
+								value="#{job}"></f:setPropertyActionListener>
+
+						</p:commandLink>
+					</p:column>
+
+
+				</p:dataTable>
+
+			</h:form>
+	   
+		</p:panel>
+		 
+
+	</ui:define>
+</ui:composition>

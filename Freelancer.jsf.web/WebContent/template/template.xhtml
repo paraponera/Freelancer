@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+ 
+<title><ui:insert name="title"></ui:insert></title>
+ <!-- Custom CSS -->
+
+	<h:outputStylesheet library="css" name="sb-admin-2.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+		<h:outputStylesheet library="css" name="bootstrap.css" />
+		
+	<h:outputStylesheet library="css/plugins" name="timeline.css" />
+		<h:outputStylesheet library="css/plugins" name="social-buttons.css" />
+			<h:outputStylesheet library="css/plugins" name="morris.css" />
+				<h:outputStylesheet library="css/plugins" name="dataTables.bootstrap.css" />
+					<h:outputStylesheet library="css/plugins/metisMenu" name="metisMenu.css" />
+					<h:outputStylesheet library="css/plugins/metisMenu" name="metisMenu2.css" />
+
+<h:outputStylesheet library="font-awesome-4.1.0/css" name="font-awesome.css" />
+<h:outputStylesheet library="font-awesome-4.1.0/css" name="font-awesome.min.css" />
+</h:head>
+
+<h:body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Freelancer</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+         
+                <li class="dropdown open">
+                
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                    
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.xhtml"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+               
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                        	<h:link value="Index" outcome="listdocuments" styleClass="fa fa-dashboard fa-fw"/>
+                            
+                        </li>
+                        <li>
+                        	<h:link value="Statistic" outcome="statistic" styleClass="fa fa-bar-chart-o fa-fw"/>
+                            
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Manage category</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Manage subcategory</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Manage user</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                        <h:link value="Jobs" outcome="listdocuments" styleClass="fa fa-files-o fa-fw"/>
+                            
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Payment</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+</div>
+        <div id="page-wrapper">
+         <ui:insert name="content"/>
+    </div>
+    <!-- /#wrapper -->
+ 
+ 
+     <h:outputScript library="js" name="jquery.js"  ></h:outputScript>  
+    <!-- Bootstrap Core JavaScript -->
+<h:outputScript library="js" name="bootstrap.min.js"  ></h:outputScript>
+
+    <!-- Metis Menu Plugin JavaScript -->
+<h:outputScript library="js/plugins/metisMenu" name="metisMenu.min.js"  ></h:outputScript>
+
+    <!-- Morris Charts JavaScript -->
+
+    <h:outputScript library="js/plugins/morris" name="raphael.min.js"  ></h:outputScript>
+    
+
+    <h:outputScript library="js/plugins/morris" name="morris.min.js"  ></h:outputScript>
+    
+ 
+<h:outputScript library="js/plugins/morris" name="morris-data.js"  ></h:outputScript>
+
+    <!-- Custom Theme JavaScript -->
+<h:outputScript library="js" name="sb-admin-2.js"  ></h:outputScript>
+
+</h:body>
+
+</html>

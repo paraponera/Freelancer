@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/templateLogin.xhtml">
+               	
+			<ui:define name="title">Freelancer - Login</ui:define>		
+			<ui:define name="contents"> 	
+				
+<div id="box">
+		<img src="#{request.contextPath}/resources/images/logo.png" class="logo" alt="yourlogo" />
+		<h1>Member Login</h1>
+		<h:form>
+			<input type="text" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Username':this.value;" value="Username" />
+			<input type="password" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Password':this.value;" value="Password"/>
+			<input type="checkbox" id="remember" value="Remember" />
+			<div class="hover-opacity">
+			<label for="remember">Remember me</label>
+			</div>
+			<input type="button" name="" value="Log In" />
+		</h:form>
+	</div>
+	<a href="#" class="forgot">Forgot your username or password?</a>
+			
+			</ui:define>
+</ui:composition>

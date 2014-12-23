@@ -12,7 +12,7 @@
 		<class>com.pidev.persistence.Sous_Categories</class>
 		<class>com.pidev.persistence.Categories</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 		</properties>
 	</persistence-unit>
 </persistence>

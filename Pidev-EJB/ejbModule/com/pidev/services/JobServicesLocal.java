@@ -15,13 +15,14 @@ import javax.ws.rs.core.MediaType;
 
 import com.pidev.persistence.Freelancer;
 import com.pidev.persistence.Job;
+import com.pidev.persistence.User;
 
 @Local
 @Path("/rest")
 public interface JobServicesLocal {
 
 	@PUT
-	@Consumes({ MediaType.APPLICATION_JSON })
+	@Consumes({ MediaType.APPLICATION_XML })
 	@Path("/addjob")
 	void create(Job job);
 
@@ -50,5 +51,5 @@ public interface JobServicesLocal {
 	@GET
 	@Path("/listAllfreelancers")
 	@Produces(MediaType.APPLICATION_JSON)
-	List<Freelancer> findAllfreelancers();
+	List<User> findAllfreelancers();
 }

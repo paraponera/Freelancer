@@ -3,8 +3,8 @@
 	<name>FreelancerRest</name>
 	<comment></comment>
 	<projects>
-		<project>Pidev-Web</project>
 		<project>Pidev-EJB</project>
+		<project>Freelancer.jsf.web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

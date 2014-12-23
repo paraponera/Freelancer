@@ -1,5 +1,6 @@
 package com.pidev.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -12,6 +13,7 @@ import javax.ws.rs.Produces;
 
 import com.pidev.persistence.Freelancer;
 import com.pidev.persistence.Job;
+import com.pidev.persistence.User;
 
 /**
  * Session Bean implementation class JobServices
@@ -64,8 +66,34 @@ public class JobServices implements JobServicesRemote, JobServicesLocal {
 
 
 	
-	public List<Freelancer> findAllfreelancers() {
-		return em.createQuery("select f from Freelancer f", Freelancer.class).getResultList();
+	public List<User> findAllfreelancers() {
+		
+		List<User> users=new ArrayList<User>();
+	    users =  em.createQuery("select u from User u", User.class).getResultList();
+		//List<Freelancer> freelancers = new ArrayList<Freelancer>();
+		List<User> frealancers = new ArrayList<User>();
+		for (User u : users) {
+			if(u instanceof Freelancer){
+				frealancers.add(u); 
+			}
+			
+		}
+		return frealancers;
 	}
+	@Override
+	public void UpdateStatusJob(Job j) {
+		// TODO Auto-generated method stub
+		 
+		Job job = em.find(Job.class, j.getId());
+		job.setState("verified");
+		em.merge(job);
+		
+	}
+	
+	public List<Object[]> StatisticJob() {
+		
+		Query q = em.createQuery("select j.date , count(*) from Job j group by state");
+		return q.getResultList();
+	 }
 
 }

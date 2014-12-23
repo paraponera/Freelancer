@@ -28,6 +28,7 @@ public class Job implements Serializable {
 	private float cost;
 	private Categories categ;
 	private int userid;
+	private int jobownerid;
 	private static final long serialVersionUID = 1L;
 	
 
@@ -37,7 +38,7 @@ public class Job implements Serializable {
 	
 	
 	public Job(String title, String description, String required_skills,
-			int estimate_duration, String state, float cost, int userid) {
+			int estimate_duration, String state, float cost, int userid, int jobownerid) {
 		super();
 		this.title = title;
 		this.description = description;
@@ -47,6 +48,7 @@ public class Job implements Serializable {
 		this.state = state;
 		this.cost = cost;
 		this.userid = userid;
+		this.jobownerid = jobownerid;
 	}
 
 
@@ -140,14 +142,27 @@ public class Job implements Serializable {
 	}
 
 
+	public int getJobownerid() {
+		return jobownerid;
+	}
+
+
+	public void setJobownerid(int jobownerid) {
+		this.jobownerid = jobownerid;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Job [id=" + id + ", title=" + title + ", description="
 				+ description + ", required_skills=" + required_skills
 				+ ", estimate_duration=" + estimate_duration + ", state="
 				+ state + ", cost=" + cost + ", categ=" + categ + ", userid="
-				+ userid + "]";
+				+ userid + ", jobownerod=" + jobownerid + "]";
 	}
+
+
+	
 	
 	
 

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import com.pidev.persistence.Job;
+import com.pidev.persistence.User;
 
 @Remote
 public interface JobServicesRemote {
@@ -15,5 +16,8 @@ public interface JobServicesRemote {
 	void remove(Job job);
 	void removeJob(int id);
 	List<Job> findAllJobs();
+	List<User> findAllfreelancers();
+	public List<Object[]> StatisticJob();
+	public void UpdateStatusJob(Job j);
 	
 }
